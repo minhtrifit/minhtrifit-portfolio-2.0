@@ -99,7 +99,7 @@ const Feature2 = ({ title, tech, icon }: FeatureProps2) => {
   return (
     <Stack
       p={5}
-      w={"300px"}
+      w={{ base: "100%", sm: "70%", md: "300px" }}
       borderWidth="1px"
       borderRadius="lg"
       minHeight={400}
@@ -234,17 +234,24 @@ const Home = () => {
           </SimpleGrid>
         </Container>
       </Box>
-      <Box p={4} margin={"100px auto"} width={"100%"} gap={20}>
+      <Box
+        // backgroundColor={"red"}
+        // p={4}
+        margin={"100px auto"}
+        width={"100%"}
+        gap={20}
+      >
         <Heading textAlign={"center"}>Technology Stack</Heading>
         <Box
-          p={4}
-          margin={"50px auto 0 auto"}
+          // p={4}
+          margin={"50px 0 0 0"}
           width={"100%"}
           display={"flex"}
           flexWrap={"wrap"}
           // flexDirection={{ base: "column", xl: "row" }}
           justifyContent={"space-around"}
           gap={5}
+          // backgroundColor={"red"}
         >
           <Feature2
             icon={<Icon as={BsFillPencilFill} w={10} h={10} />}

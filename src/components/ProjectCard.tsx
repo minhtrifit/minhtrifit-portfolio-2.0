@@ -30,12 +30,13 @@ const ProjectCard = (props: PropType) => {
   return (
     <div>
       <Card
-        direction={{ base: "column", sm: "row" }}
+        direction={{ base: "column", lg: "row" }}
         overflow="hidden"
         variant="outline"
       >
-        <ReactPlayer url={youtube} />
-
+        <Box minWidth={{ base: "100%", lg: "400px", xl: "600px" }}>
+          <ReactPlayer width="100%" url={youtube} />
+        </Box>
         <Stack>
           <CardBody>
             <Heading size="md">{name}</Heading>
