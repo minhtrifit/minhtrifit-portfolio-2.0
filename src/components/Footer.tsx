@@ -8,6 +8,7 @@ import {
   VisuallyHidden,
 } from "@chakra-ui/react";
 import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { AiFillGithub } from "react-icons/ai";
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
@@ -111,6 +112,12 @@ export default function Footer() {
               href={"https://www.youtube.com/@minhtrifit"}
             >
               <FaYoutube />
+            </SocialButton>
+            <SocialButton
+              label={"Github"}
+              href={"https://github.com/minhtrifit"}
+            >
+              <AiFillGithub />
             </SocialButton>
             <SocialButton
               label={"Linkedin"}

@@ -1,4 +1,4 @@
-import { ReactText } from "react";
+import { ReactText, useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { BsSun, BsMoonStarsFill } from "react-icons/bs";
@@ -13,7 +13,18 @@ import {
   useDisclosure,
   BoxProps,
   FlexProps,
+  Menu,
+  MenuButton,
+  IconButton,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
 } from "@chakra-ui/react";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { FiHome, FiGrid, FiBook } from "react-icons/fi";
 import { IconType } from "react-icons";
 import { Link } from "react-router-dom";
@@ -21,6 +32,7 @@ import { Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Project from "./pages/Project";
 import Blog from "./pages/Blog";
+import DetailBlog from "./pages/DetailBlog";
 
 import Footer from "./components/Footer";
 
@@ -117,7 +129,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 
 const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef<any>();
+
+  const blogManagementLink = "./blog content/blogManagement.json"; // URL blog management
+  const [initBlogList, setInitBlogList] = useState<any[]>([]); // set 1 times when loading page
 
   return (
     <div style={{ display: "flex" }}>
@@ -142,6 +158,51 @@ const App = () => {
             padding: "20px 20px",
           }}
         >
+          <Drawer
+            isOpen={isOpen}
+            placement="left"
+            onClose={onClose}
+            finalFocusRef={btnRef}
+          >
+            <DrawerOverlay />
+            <DrawerContent>
+              <DrawerCloseButton />
+              <DrawerHeader>
+                <Link to="/">
+                  <div
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      margin: "0 auto",
+                    }}
+                  >
+                    <img style={{ width: "100%" }} src="./assets/logo.png" />
+                  </div>
+                </Link>
+              </DrawerHeader>
+
+              <DrawerBody>
+                {LinkItems.map((link) => (
+                  <NavItem key={link.name} icon={link.icon}>
+                    {link.name}
+                  </NavItem>
+                ))}
+              </DrawerBody>
+
+              <DrawerFooter></DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<GiHamburgerMenu />}
+              variant="outline"
+              ref={btnRef}
+              onClick={onOpen}
+              display={{ base: "flex", md: "none" }}
+            />
+          </Menu>
           <Button
             aria-label="Toggle Color Mode"
             onClick={toggleColorMode}
@@ -154,7 +215,20 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<Project />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route
+            path="/blog"
+            element={
+              <Blog
+                blogManagementLink={blogManagementLink}
+                initBlogList={initBlogList}
+                setInitBlogList={setInitBlogList}
+              />
+            }
+          />
+          <Route
+            path="/blog/:id"
+            element={<DetailBlog initBlogList={initBlogList} />}
+          />
         </Routes>
         <Footer />
       </Box>
