@@ -113,7 +113,7 @@ import Home from "./pages/Home";
 
 const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { onClose } = useDisclosure();
 
   return (
     <div style={{ display: "flex" }}>
