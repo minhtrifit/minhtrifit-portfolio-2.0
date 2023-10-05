@@ -12,24 +12,7 @@ import {
   Box,
   HStack,
   VStack,
-  Wrap,
-  WrapItem,
-  Button,
-  FormControl,
-  Input,
-  InputGroup,
-  IconButton,
-  FormLabel,
-  InputLeftElement,
-  Textarea,
 } from "@chakra-ui/react";
-import {
-  MdEmail,
-  MdLocationOn,
-  MdFacebook,
-  MdOutlineEmail,
-} from "react-icons/md";
-import { BsPerson } from "react-icons/bs";
 import { IoSchool } from "react-icons/io5";
 import {
   BiCodeAlt,
@@ -45,7 +28,6 @@ import {
   AiFillGithub,
   AiOutlineAntDesign,
   AiOutlineCheck,
-  AiFillInstagram,
 } from "react-icons/ai";
 import { BsFillPencilFill } from "react-icons/bs";
 import {
@@ -441,142 +423,6 @@ const Home = () => {
           />
         </Box>
       </Box>
-      <Container
-        // bg="#9DC4FB"
-        maxW="full"
-        centerContent
-        overflow="hidden"
-      >
-        <Flex>
-          <Box
-            bg="#78c6e3"
-            color="white"
-            borderRadius="lg"
-            m={{ sm: 4, md: 16, lg: 10 }}
-            p={{ sm: 5, md: 5, lg: 16 }}
-          >
-            <Box p={4}>
-              <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-                <WrapItem>
-                  <Box>
-                    <Heading>Contact</Heading>
-                    <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.100">
-                      Fill up the form below to contact
-                    </Text>
-                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                      <VStack pl={0} spacing={3} alignItems="flex-start">
-                        <Button
-                          size="md"
-                          height="48px"
-                          width="200px"
-                          variant="ghost"
-                          color="white"
-                          _hover={{ border: "2px solid #1C6FEB" }}
-                          w={300}
-                          leftIcon={<MdEmail color="#1970F1" size="20px" />}
-                        >
-                          minhtri.fit@gmail.com
-                        </Button>
-                        <Button
-                          size="md"
-                          height="48px"
-                          width="200px"
-                          variant="ghost"
-                          color="white"
-                          _hover={{ border: "2px solid #1C6FEB" }}
-                          w={300}
-                          leftIcon={
-                            <MdLocationOn color="#1970F1" size="20px" />
-                          }
-                        >
-                          Ho Chi Minh city, VietNam
-                        </Button>
-                      </VStack>
-                    </Box>
-                    <HStack
-                      mt={{ lg: 10, md: 10 }}
-                      spacing={5}
-                      px={5}
-                      alignItems="flex-start"
-                    >
-                      <IconButton
-                        aria-label="facebook"
-                        variant="ghost"
-                        size="lg"
-                        isRound={true}
-                        _hover={{ bg: "#0D74FF" }}
-                        icon={<MdFacebook size="28px" />}
-                      />
-                      <IconButton
-                        aria-label="instagram"
-                        variant="ghost"
-                        size="lg"
-                        isRound={true}
-                        _hover={{ bg: "#0D74FF" }}
-                        icon={<AiFillInstagram size="28px" />}
-                      />
-                      <IconButton
-                        aria-label="github"
-                        variant="ghost"
-                        size="lg"
-                        isRound={true}
-                        _hover={{ bg: "#0D74FF" }}
-                        icon={<AiFillGithub size="28px" />}
-                      />
-                    </HStack>
-                  </Box>
-                </WrapItem>
-                <WrapItem>
-                  <Box bg="white" borderRadius="lg">
-                    <Box m={8} color="#0B0E3F">
-                      <VStack spacing={5}>
-                        <FormControl id="name">
-                          <FormLabel>Your Name</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement pointerEvents="none">
-                              <BsPerson color="gray.800" />
-                            </InputLeftElement>
-                            <Input type="text" size="md" />
-                          </InputGroup>
-                        </FormControl>
-                        <FormControl id="name">
-                          <FormLabel>Email</FormLabel>
-                          <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement pointerEvents="none">
-                              <MdOutlineEmail color="gray.800" />
-                            </InputLeftElement>
-                            <Input type="text" size="md" />
-                          </InputGroup>
-                        </FormControl>
-                        <FormControl id="name">
-                          <FormLabel>Message</FormLabel>
-                          <Textarea
-                            borderColor="gray.300"
-                            _hover={{
-                              borderRadius: "gray.300",
-                            }}
-                            placeholder="message"
-                          />
-                        </FormControl>
-                        <FormControl id="name" float="right">
-                          <Button
-                            variant="solid"
-                            bg="#0D74FF"
-                            color="white"
-                            _hover={{}}
-                          >
-                            Send Message
-                          </Button>
-                        </FormControl>
-                      </VStack>
-                    </Box>
-                  </Box>
-                </WrapItem>
-              </Wrap>
-            </Box>
-          </Box>
-        </Flex>
-      </Container>
     </div>
   );
 };
