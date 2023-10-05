@@ -1,1 +1,1 @@
-# Website: https://minhtrifit.dev.netlify.app
+# Website: https://minhtrifitdev.netlify.app

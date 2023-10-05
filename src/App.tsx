@@ -18,6 +18,12 @@ import { FiHome, FiGrid, FiBook } from "react-icons/fi";
 import { IconType } from "react-icons";
 import { Link } from "react-router-dom";
 
+import Home from "./pages/Home";
+import Project from "./pages/Project";
+import Blog from "./pages/Blog";
+
+import Footer from "./components/Footer";
+
 interface LinkItemProps {
   name: string;
   icon: IconType;
@@ -109,8 +115,6 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   );
 };
 
-import Home from "./pages/Home";
-
 const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { onClose } = useDisclosure();
@@ -124,6 +128,7 @@ const App = () => {
       <Box
         width={{ base: "100%", md: "calc(100vw - 230px)" }}
         marginLeft={{ md: "230px" }}
+        minHeight={"100vh"}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -148,7 +153,10 @@ const App = () => {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
+        <Footer />
       </Box>
     </div>
   );
