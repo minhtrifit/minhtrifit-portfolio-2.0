@@ -51,6 +51,10 @@ import {
 import { MdMilitaryTech } from "react-icons/md";
 import { ReactElement, useEffect } from "react";
 
+// import MusicPlayer from "../components/MusicPlayer";
+// import { gradient, progressGradient } from "../utils/util";
+// import Timeline from "wavesurfer.js/dist/plugins/timeline.js";
+
 interface FeatureProps {
   text: string;
   iconBg: string;
@@ -137,7 +141,10 @@ const Home = () => {
   useEffect(() => {
     document.title = "minhtrifit | Home";
     window.scrollTo(0, 0);
-  });
+  }, []);
+
+  // const audioUrl = "https://voca.ro/1on8MQtJXfzC";
+  // const audioUrl = "./audio/audio1.wav";
 
   return (
     <div style={{ padding: "20px 20px", marginBottom: "300px" }}>
@@ -234,8 +241,8 @@ const Home = () => {
                 text={"Information of Technology - Software Engineering"}
               />
               <Feature
-                icon={<Icon as={BiCodeAlt} color={"purple.500"} w={5} h={5} />}
-                iconBg={useColorModeValue("purple.100", "purple.900")}
+                icon={<Icon as={BiCodeAlt} color={"red.400"} w={5} h={5} />}
+                iconBg={useColorModeValue("red.100", "red.900")}
                 text={"Fullstack Developer"}
               />
             </Stack>
@@ -305,29 +312,27 @@ const Home = () => {
                 }}
               >
                 <Feature
-                  icon={<Icon as={FaHtml5} color={"white.500"} w={5} h={5} />}
-                  iconBg={useColorModeValue("red.100", "red.600")}
+                  icon={<Icon as={FaHtml5} color={"red.400"} w={5} h={5} />}
+                  iconBg={useColorModeValue("red.100", "red.800")}
                   text={"HTML"}
                 />
                 <Feature
                   icon={
-                    <Icon as={BiLogoCss3} color={"white.500"} w={5} h={5} />
+                    <Icon as={BiLogoCss3} color={"purple.400"} w={5} h={5} />
                   }
-                  iconBg={useColorModeValue("purple.100", "purple.700")}
+                  iconBg={useColorModeValue("purple.100", "purple.800")}
                   text={"CSS"}
                 />
                 <Feature
-                  icon={
-                    <Icon as={BiLogoSass} color={"white.500"} w={5} h={5} />
-                  }
-                  iconBg={useColorModeValue("pink.100", "pink.600")}
+                  icon={<Icon as={BiLogoSass} color={"pink.400"} w={5} h={5} />}
+                  iconBg={useColorModeValue("pink.100", "pink.800")}
                   text={"SASS"}
                 />
                 <Feature
                   icon={
                     <Icon
                       as={BiLogoTailwindCss}
-                      color={"white.400"}
+                      color={"green.400"}
                       w={5}
                       h={5}
                     />
@@ -337,7 +342,7 @@ const Home = () => {
                 />
                 <Feature
                   icon={
-                    <Icon as={BiLogoReact} color={"white.500"} w={5} h={5} />
+                    <Icon as={BiLogoReact} color={"blue.400"} w={5} h={5} />
                   }
                   iconBg={useColorModeValue("blue.100", "blue.900")}
                   text={"ReactJS"}
@@ -359,21 +364,21 @@ const Home = () => {
               >
                 <Feature
                   icon={
-                    <Icon as={FaBootstrap} color={"white.500"} w={5} h={5} />
+                    <Icon as={FaBootstrap} color={"purple.400"} w={5} h={5} />
                   }
-                  iconBg={useColorModeValue("purple.100", "purple.600")}
+                  iconBg={useColorModeValue("purple.100", "purple.900")}
                   text={"Bootstrap 5"}
                 />
                 <Feature
                   icon={
                     <Icon
                       as={SiMaterialdesignicons}
-                      color={"white.500"}
+                      color={"blue.400"}
                       w={5}
                       h={5}
                     />
                   }
-                  iconBg={useColorModeValue("blue.100", "blue.600")}
+                  iconBg={useColorModeValue("blue.100", "blue.900")}
                   text={"Material UI"}
                 />
 
@@ -381,19 +386,19 @@ const Home = () => {
                   icon={
                     <Icon
                       as={AiOutlineAntDesign}
-                      color={"red.500"}
+                      color={"red.400"}
                       w={5}
                       h={5}
                     />
                   }
-                  iconBg={useColorModeValue("blue.100", "blue.600")}
+                  iconBg={useColorModeValue("red.100", "red.900")}
                   text={"AntDesign"}
                 />
                 <Feature
                   icon={
-                    <Icon as={SiChakraui} color={"white.300"} w={5} h={5} />
+                    <Icon as={SiChakraui} color={"green.400"} w={5} h={5} />
                   }
-                  iconBg={useColorModeValue("green.100", "green.500")}
+                  iconBg={useColorModeValue("green.100", "green.800")}
                   text={"Chakra UI"}
                 />
               </div>
@@ -412,8 +417,8 @@ const Home = () => {
                 }}
               >
                 <Feature
-                  icon={<Icon as={SiExpress} color={"white.500"} w={5} h={5} />}
-                  iconBg={useColorModeValue("green.100", "green.600")}
+                  icon={<Icon as={SiExpress} color={"green.400"} w={5} h={5} />}
+                  iconBg={useColorModeValue("green.100", "green.900")}
                   text={"Express"}
                 />
                 <Feature
@@ -432,12 +437,12 @@ const Home = () => {
                   icon={
                     <Icon
                       as={BiLogoPostgresql}
-                      color={"white.500"}
+                      color={"blue.400"}
                       w={5}
                       h={5}
                     />
                   }
-                  iconBg={useColorModeValue("blue.100", "blue.800")}
+                  iconBg={useColorModeValue("blue.100", "blue.900")}
                   text={"Postgresql"}
                 />
                 <Feature
@@ -480,17 +485,15 @@ const Home = () => {
                   text={"Slack"}
                 />
                 <Feature
-                  icon={
-                    <Icon as={BiLogoFigma} color={"white.500"} w={5} h={5} />
-                  }
-                  iconBg={useColorModeValue("red.100", "red.700")}
+                  icon={<Icon as={BiLogoFigma} color={"red.400"} w={5} h={5} />}
+                  iconBg={useColorModeValue("red.100", "red.900")}
                   text={"Figma"}
                 />
                 <Feature
                   icon={
-                    <Icon as={BiLogoDocker} color={"white.500"} w={5} h={5} />
+                    <Icon as={BiLogoDocker} color={"cyan.500"} w={5} h={5} />
                   }
-                  iconBg={useColorModeValue("cyan.100", "cyan.700")}
+                  iconBg={useColorModeValue("cyan.100", "cyan.900")}
                   text={"Docker"}
                 />
               </div>
@@ -498,6 +501,16 @@ const Home = () => {
           />
         </Box>
       </Box>
+      {/* <Box margin={"200px auto"} maxW={"5xl"}>
+        <MusicPlayer
+          height={80}
+          waveColor={gradient}
+          progressColor={progressGradient}
+          barWidth={2}
+          url={audioUrl}
+          plugins={[Timeline.create()]}
+        />
+      </Box> */}
     </div>
   );
 };
