@@ -23,15 +23,19 @@ import {
   BiLogoFigma,
   BiLogoFirebase,
   BiLogoPostgresql,
+  BiLogoDocker,
+  BiLogoGoLang,
 } from "react-icons/bi";
 import {
   AiFillGithub,
   AiOutlineAntDesign,
   AiOutlineCheck,
+  AiFillYoutube,
+  AiFillLinkedin,
 } from "react-icons/ai";
-import { BsFillPencilFill } from "react-icons/bs";
+import { BsFillPencilFill, BsFacebook } from "react-icons/bs";
 import {
-  SiMaterialdesign,
+  SiMaterialdesignicons,
   SiChakraui,
   SiExpress,
   SiNestjs,
@@ -156,6 +160,59 @@ const Home = () => {
             <Text color={"gray.500"} fontSize={"lg"}>
               Web Application Fullstack Developer
             </Text>
+            <Stack>
+              <Text color={"gray.400"} fontSize={"lg"}>
+                Contact with me:
+              </Text>
+              <Flex mt={3} mb={8} gap={2}>
+                <a href="https://www.facebook.com/minhtrifit">
+                  <Feature
+                    icon={
+                      <Icon as={BsFacebook} color={"blue.400"} w={5} h={5} />
+                    }
+                    iconBg={useColorModeValue("blue.100", "blue.700")}
+                    text={""}
+                  />
+                </a>
+                <a href="https://github.com/minhtrifit">
+                  <Feature
+                    icon={
+                      <Icon
+                        as={AiFillGithub}
+                        color={"purple.900"}
+                        w={5}
+                        h={5}
+                      />
+                    }
+                    iconBg={useColorModeValue("purple.100", "purple.600")}
+                    text={""}
+                  />
+                </a>
+                <a href="https://www.youtube.com/@minhtrifit">
+                  <Feature
+                    icon={
+                      <Icon as={AiFillYoutube} color={"red.500"} w={5} h={5} />
+                    }
+                    iconBg={useColorModeValue("red.100", "red.800")}
+                    text={""}
+                  />
+                </a>
+                <a href="https://www.linkedin.com/in/lê-minh-trí-89ab94215/">
+                  <Feature
+                    icon={
+                      <Icon
+                        as={AiFillLinkedin}
+                        color={"blue.500"}
+                        w={5}
+                        h={5}
+                      />
+                    }
+                    iconBg={useColorModeValue("blue.100", "blue.900")}
+                    text={""}
+                  />
+                </a>
+              </Flex>
+            </Stack>
             <Stack
               spacing={4}
               divider={
@@ -248,37 +305,39 @@ const Home = () => {
                 }}
               >
                 <Feature
-                  icon={<Icon as={FaHtml5} color={"red.500"} w={5} h={5} />}
-                  iconBg={useColorModeValue("red.100", "red.900")}
+                  icon={<Icon as={FaHtml5} color={"white.500"} w={5} h={5} />}
+                  iconBg={useColorModeValue("red.100", "red.600")}
                   text={"HTML"}
                 />
                 <Feature
                   icon={
-                    <Icon as={BiLogoCss3} color={"purple.500"} w={5} h={5} />
+                    <Icon as={BiLogoCss3} color={"white.500"} w={5} h={5} />
                   }
-                  iconBg={useColorModeValue("purple.100", "purple.900")}
+                  iconBg={useColorModeValue("purple.100", "purple.700")}
                   text={"CSS"}
                 />
                 <Feature
-                  icon={<Icon as={BiLogoSass} color={"pink.500"} w={5} h={5} />}
-                  iconBg={useColorModeValue("pink.100", "pink.900")}
+                  icon={
+                    <Icon as={BiLogoSass} color={"white.500"} w={5} h={5} />
+                  }
+                  iconBg={useColorModeValue("pink.100", "pink.600")}
                   text={"SASS"}
                 />
                 <Feature
                   icon={
                     <Icon
                       as={BiLogoTailwindCss}
-                      color={"green.500"}
+                      color={"white.400"}
                       w={5}
                       h={5}
                     />
                   }
-                  iconBg={useColorModeValue("green.100", "green.900")}
+                  iconBg={useColorModeValue("green.100", "green.700")}
                   text={"Tailwindcss"}
                 />
                 <Feature
                   icon={
-                    <Icon as={BiLogoReact} color={"blue.500"} w={5} h={5} />
+                    <Icon as={BiLogoReact} color={"white.500"} w={5} h={5} />
                   }
                   iconBg={useColorModeValue("blue.100", "blue.900")}
                   text={"ReactJS"}
@@ -300,21 +359,21 @@ const Home = () => {
               >
                 <Feature
                   icon={
-                    <Icon as={FaBootstrap} color={"purple.500"} w={5} h={5} />
+                    <Icon as={FaBootstrap} color={"white.500"} w={5} h={5} />
                   }
-                  iconBg={useColorModeValue("purple.100", "purple.900")}
+                  iconBg={useColorModeValue("purple.100", "purple.600")}
                   text={"Bootstrap 5"}
                 />
                 <Feature
                   icon={
                     <Icon
-                      as={SiMaterialdesign}
+                      as={SiMaterialdesignicons}
                       color={"white.500"}
                       w={5}
                       h={5}
                     />
                   }
-                  iconBg={useColorModeValue("white.100", "white.900")}
+                  iconBg={useColorModeValue("blue.100", "blue.600")}
                   text={"Material UI"}
                 />
 
@@ -322,19 +381,19 @@ const Home = () => {
                   icon={
                     <Icon
                       as={AiOutlineAntDesign}
-                      color={"blue.500"}
+                      color={"red.500"}
                       w={5}
                       h={5}
                     />
                   }
-                  iconBg={useColorModeValue("blue.100", "blue.900")}
+                  iconBg={useColorModeValue("blue.100", "blue.600")}
                   text={"AntDesign"}
                 />
                 <Feature
                   icon={
-                    <Icon as={SiChakraui} color={"green.500"} w={5} h={5} />
+                    <Icon as={SiChakraui} color={"white.300"} w={5} h={5} />
                   }
-                  iconBg={useColorModeValue("green.100", "green.900")}
+                  iconBg={useColorModeValue("green.100", "green.500")}
                   text={"Chakra UI"}
                 />
               </div>
@@ -354,7 +413,7 @@ const Home = () => {
               >
                 <Feature
                   icon={<Icon as={SiExpress} color={"white.500"} w={5} h={5} />}
-                  iconBg={useColorModeValue("white.100", "white.900")}
+                  iconBg={useColorModeValue("green.100", "green.600")}
                   text={"Express"}
                 />
                 <Feature
@@ -364,14 +423,21 @@ const Home = () => {
                 />
                 <Feature
                   icon={
+                    <Icon as={BiLogoGoLang} color={"white.500"} w={5} h={5} />
+                  }
+                  iconBg={useColorModeValue("cyan.100", "cyan.700")}
+                  text={"Golang"}
+                />
+                <Feature
+                  icon={
                     <Icon
                       as={BiLogoPostgresql}
-                      color={"blue.500"}
+                      color={"white.500"}
                       w={5}
                       h={5}
                     />
                   }
-                  iconBg={useColorModeValue("blue.100", "blue.900")}
+                  iconBg={useColorModeValue("blue.100", "blue.800")}
                   text={"Postgresql"}
                 />
                 <Feature
@@ -414,9 +480,18 @@ const Home = () => {
                   text={"Slack"}
                 />
                 <Feature
-                  icon={<Icon as={BiLogoFigma} color={"red.500"} w={5} h={5} />}
-                  iconBg={useColorModeValue("red.100", "red.900")}
+                  icon={
+                    <Icon as={BiLogoFigma} color={"white.500"} w={5} h={5} />
+                  }
+                  iconBg={useColorModeValue("red.100", "red.700")}
                   text={"Figma"}
+                />
+                <Feature
+                  icon={
+                    <Icon as={BiLogoDocker} color={"white.500"} w={5} h={5} />
+                  }
+                  iconBg={useColorModeValue("cyan.100", "cyan.700")}
+                  text={"Docker"}
                 />
               </div>
             }
