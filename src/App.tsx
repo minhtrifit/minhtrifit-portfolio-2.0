@@ -48,16 +48,30 @@ const LinkItems: Array<LinkItemProps> = [
 ];
 
 interface NavItemProps extends FlexProps {
+  active: string;
+  setActive: React.Dispatch<React.SetStateAction<string>>;
   icon: IconType;
   children: ReactText;
 }
 
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({
+  active,
+  setActive,
+  icon,
+  children,
+  ...rest
+}: NavItemProps) => {
   const url = children.toString().toLowerCase();
 
   return (
     <Link to={url === "home" ? "/" : url}>
-      <Box style={{ textDecoration: "none" }} _focus={{ boxShadow: "none" }}>
+      <Box
+        style={{ textDecoration: "none" }}
+        _focus={{ boxShadow: "none" }}
+        onClick={() => {
+          setActive(url);
+        }}
+      >
         <Flex
           align="center"
           p="4"
@@ -65,8 +79,9 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
           borderRadius="lg"
           role="group"
           cursor="pointer"
+          bg={`${active === url ? "cyan.400" : ""}`}
           _hover={{
-            bg: "cyan.400",
+            bg: "cyan.300",
             color: "white",
           }}
           {...rest}
@@ -89,10 +104,17 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 };
 
 interface SidebarProps extends BoxProps {
+  active: string;
+  setActive: React.Dispatch<React.SetStateAction<string>>;
   onClose: () => void;
 }
 
-const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+const SidebarContent = ({
+  active,
+  setActive,
+  onClose,
+  ...rest
+}: SidebarProps) => {
   return (
     <Box
       style={{ width: "230px" }}
@@ -119,7 +141,12 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem
+          active={active}
+          setActive={setActive}
+          key={link.name}
+          icon={link.icon}
+        >
           {link.name}
         </NavItem>
       ))}
@@ -135,9 +162,13 @@ const App = () => {
   const blogManagementLink = "./blog content/blogManagement.json"; // URL blog management
   const [initBlogList, setInitBlogList] = useState<any[]>([]); // set 1 times when loading page
 
+  const [active, setActive] = useState<string>("home");
+
   return (
     <div style={{ display: "flex" }}>
       <SidebarContent
+        active={active}
+        setActive={setActive}
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
       />
@@ -183,7 +214,12 @@ const App = () => {
 
               <DrawerBody>
                 {LinkItems.map((link) => (
-                  <NavItem key={link.name} icon={link.icon}>
+                  <NavItem
+                    active={active}
+                    setActive={setActive}
+                    key={link.name}
+                    icon={link.icon}
+                  >
                     {link.name}
                   </NavItem>
                 ))}

@@ -1,7 +1,14 @@
 import { Box, Icon } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { BiLogoReact, BiLogoFirebase, BiLogoPostgresql } from "react-icons/bi";
-import { SiExpress, SiMaterialdesignicons, SiNestjs } from "react-icons/si";
+import {
+  SiExpress,
+  SiMaterialdesignicons,
+  SiNestjs,
+  SiTailwindcss,
+  SiSpring,
+  SiMysql,
+} from "react-icons/si";
 import { AiFillHtml5, AiOutlineAntDesign } from "react-icons/ai";
 import { DiCss3 } from "react-icons/di";
 
@@ -20,6 +27,19 @@ const Project = () => {
       flexDirection={"column"}
       gap={10}
     >
+      <ProjectCard
+        name="Spotify Clone - Music & Management App"
+        youtube="https://youtu.be/iLBWCdZQNpQ"
+        github="https://github.com/minhtrifit/spotify-clone-client"
+        description="Music app website inspired from Spotify"
+        tech={[
+          <Icon as={BiLogoReact} color={"blue.500"} w={14} h={14} />,
+          <Icon as={SiTailwindcss} color={"purple.500"} w={14} h={14} />,
+          <Icon as={SiSpring} color={"green.500"} w={12} h={12} />,
+          <Icon as={SiMysql} color={"yellow.500"} w={14} h={14} />,
+        ]}
+        date="22th Dec 2023"
+      />
       <ProjectCard
         name="Slearninglab - Education Training"
         youtube="https://youtu.be/g9WHplySekY"
